@@ -17,3 +17,12 @@ jobs:
           node-version: 16
       - run: "npm install"
       - run: "npm run build"
+  lint:
+    runs-on: ebuntu-latest
+    steps:
+      - name: "Sätter upp Node v16 i vårt Workflow"
+        uses: actions/setup-node@v3
+        with:
+          node-version: 16
+      - run: "npm install"
+      - run: "npx eslint src/*.jsx"
